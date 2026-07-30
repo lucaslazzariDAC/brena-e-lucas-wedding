@@ -1,0 +1,192 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-ocean: var(--ocean);
+  --color-ocean-light: var(--ocean-light);
+  --color-silver: var(--silver);
+  --color-silver-bright: var(--silver-bright);
+  --color-paper: var(--paper);
+  --color-paper-warm: var(--paper-warm);
+  --font-display: var(--font-display);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Wedding palette */
+  --navy: #0d1b2a;
+  --navy-deep: #06101c;
+  --ocean: #4fa3c3;
+  --ocean-light: #8fc4d8;
+  --silver: #b7b7b7;
+  --silver-bright: #e5e5e5;
+  --paper: #f2eee6;
+  --paper-warm: #e8e1d2;
+
+  /* Semantic — mapped to wedding palette */
+  --background: #f2eee6;
+  --foreground: #0d1b2a;
+  --card: #ffffff;
+  --card-foreground: #0d1b2a;
+  --popover: #ffffff;
+  --popover-foreground: #0d1b2a;
+  --primary: #0d1b2a;
+  --primary-foreground: #f2eee6;
+  --secondary: #4fa3c3;
+  --secondary-foreground: #0d1b2a;
+  --muted: #e8e1d2;
+  --muted-foreground: #4a5568;
+  --accent: #b7b7b7;
+  --accent-foreground: #0d1b2a;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #f2eee6;
+  --border: rgba(13, 27, 42, 0.15);
+  --input: rgba(13, 27, 42, 0.2);
+  --ring: #4fa3c3;
+
+  --font-display: "Cinzel Decorative", "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", "Cormorant", serif;
+  --font-sans: "Montserrat", "Lato", system-ui, sans-serif;
+
+  /* Gradients & shadows */
+  --gradient-silver: linear-gradient(135deg, #e5e5e5 0%, #b7b7b7 50%, #8a8a8a 100%);
+  --gradient-navy: linear-gradient(180deg, #0d1b2a 0%, #06101c 100%);
+  --gradient-ocean: linear-gradient(180deg, #4fa3c3 0%, #2a6f8f 100%);
+  --shadow-elegant: 0 20px 60px -20px rgba(13, 27, 42, 0.5);
+  --shadow-silver: 0 0 30px rgba(183, 183, 183, 0.4);
+}
+
+.dark {
+  --background: #06101c;
+  --foreground: #f2eee6;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Paper texture */
+.bg-paper-texture {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(183, 183, 183, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(79, 163, 195, 0.06) 0%, transparent 50%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.4  0 0 0 0 0.4  0 0 0 0 0.4  0 0 0 0.08 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+}
+
+.bg-navy-texture {
+  background-color: var(--navy);
+  background-image:
+    radial-gradient(ellipse at top, rgba(79, 163, 195, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(6, 16, 28, 0.8) 0%, transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.04 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #e5e5e5 0%, #b7b7b7 50%, #8a8a8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-serif { font-family: var(--font-serif); }
+
+/* Wave animation */
+@keyframes wave-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.wave-drift { animation: wave-drift 24s linear infinite; }
+.wave-drift-slow { animation: wave-drift 40s linear infinite; }
+
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.shimmer { animation: shimmer 3s ease-in-out infinite; }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+
+/* Tone down the default OSM/Leaflet tile colors to sit better on the dark theme */
+.wedding-map-tint .leaflet-tile-pane {
+  filter: brightness(0.78) contrast(1.05) saturate(0.55) hue-rotate(180deg) invert(0.92);
+}
+.wedding-map-tint .leaflet-control-attribution {
+  background: rgba(13, 27, 42, 0.75) !important;
+  color: #b7b7b7 !important;
+}
+.wedding-map-tint .leaflet-control-attribution a {
+  color: #e8e3d3 !important;
+}
+.wedding-map-tint .leaflet-control-zoom a {
+  background: rgba(13, 27, 42, 0.85) !important;
+  color: #e8e3d3 !important;
+  border-color: rgba(183, 183, 183, 0.4) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
