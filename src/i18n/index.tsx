@@ -36,6 +36,10 @@ const pt: Dict = {
   "section.gallery.title": "Galeria",
   "section.location.eyebrow": "Os Locais",
   "section.location.title": "Como Chegar",
+  "section.dresscode.eyebrow": "Traje",
+  "section.dresscode.title": "Confortável Praiano",
+  "section.dresscode.text":
+    "A cerimônia é na areia da praia, então vista-se com leveza: roupas confortáveis, tecidos frescos e cores claras — inspiradas no mar e na areia. Sapatos baixos ou rasteirinhas são bem-vindos, já que o chão é de areia.",
   "section.lodging.eyebrow": "Para sua estadia",
   "section.lodging.title": "Hospedagem",
   "section.lodging.subtitle":
@@ -154,6 +158,10 @@ const en: Dict = {
   "section.gallery.title": "Gallery",
   "section.location.eyebrow": "The Venues",
   "section.location.title": "How to Get There",
+  "section.dresscode.eyebrow": "Dress Code",
+  "section.dresscode.title": "Comfortable Beach Chic",
+  "section.dresscode.text":
+    "The ceremony takes place on the sand, so dress light: comfortable clothing, breathable fabrics and soft colors — inspired by the sea and the sand. Flats or sandals are welcome, since the ground is sand.",
   "section.lodging.eyebrow": "For your stay",
   "section.lodging.title": "Lodging",
   "section.lodging.subtitle":

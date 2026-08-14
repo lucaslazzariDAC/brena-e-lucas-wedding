@@ -104,6 +104,7 @@ function Index() {
           <OrixaSection />
           <GallerySection />
           <LocationSection />
+          <DressCodeSection />
           <LodgingSection />
           <GiftSection />
           <RSVPSection />
@@ -493,6 +494,33 @@ function LocationSection() {
         <div className="mt-12">
           <LocationMap />
         </div>
+      </div>
+    </section>
+  );
+}
+
+function DressCodeSection() {
+  const { t } = useLang();
+  return (
+    <section className="relative px-4 py-24 sm:py-32">
+      <div className="mx-auto max-w-2xl">
+        <SectionHeading eyebrowKey="section.dresscode.eyebrow" titleKey="section.dresscode.title" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-10 flex flex-col items-center rounded-sm border border-silver/25 bg-navy/40 p-10 text-center backdrop-blur-sm"
+        >
+          <div className="flex items-center gap-3 text-ocean-light">
+            <ShellIcon className="h-8 w-8" />
+            <WaveIcon className="h-6 w-16" />
+            <ShellIcon className="h-8 w-8 -scale-x-100" />
+          </div>
+          <p className="mt-6 max-w-md font-serif text-lg italic leading-relaxed text-silver">
+            {t("section.dresscode.text")}
+          </p>
+        </motion.div>
       </div>
     </section>
   );
