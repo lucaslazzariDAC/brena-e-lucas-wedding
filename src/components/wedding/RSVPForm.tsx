@@ -12,7 +12,7 @@ export function RSVPForm() {
   const closed = Date.now() > deadline;
 
   const schema = z.object({
-    name: z.string().trim().min(2, t("rsvp.err_name")).max(150),
+    name: z.string().trim().min(2, t("rsvp.err_name")).max(120, t("rsvp.err_name")),
     guests: z.coerce.number().int().min(1, t("rsvp.err_guests_min")).max(20, t("rsvp.err_guests_max")),
     phone: z.string().trim().min(8, t("rsvp.err_phone")).max(30),
     companions: z.string().trim().max(500).optional().or(z.literal("")),
