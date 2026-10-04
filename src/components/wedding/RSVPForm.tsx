@@ -2,14 +2,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
-import { wedding } from "@/config/wedding";
 import { useLang } from "@/i18n";
 import { supabase } from "@/integrations/supabase/client";
 
 export function RSVPForm() {
   const { t } = useLang();
-  const deadline = new Date(wedding.rsvpDeadline).getTime();
-  const closed = Date.now() > deadline;
+  // O formulário nunca é desabilitado, mesmo após o prazo.
+  const closed = false;
 
   const schema = z.object({
     name: z.string().trim().min(2, t("rsvp.err_name")).max(120, t("rsvp.err_name")),
