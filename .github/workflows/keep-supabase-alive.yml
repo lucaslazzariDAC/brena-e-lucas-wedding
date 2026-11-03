@@ -15,7 +15,7 @@ on:
     # Every Monday and Thursday at 12:00 UTC (09:00 America/Sao_Paulo) —
     # comfortably inside the 7-day inactivity window, with margin for
     # GitHub sometimes delaying scheduled runs.
-    - cron: "0 12 * * 1,4"
+    - cron: "0 12 * * *"
   workflow_dispatch: {}
 
 jobs:
@@ -29,10 +29,14 @@ jobs:
             echo "Missing SUPABASE_URL or SUPABASE_PUBLISHABLE_KEY repo secrets." >&2
             exit 1
           fi
-          status=$(curl -sS -o /tmp/response.json -w "%{http_code}" \
-            "${SUPABASE_URL}/rest/v1/rsvps?select=id&limit=1" \
+          # Chama a função keep_alive(), que faz um UPSERT real no banco
+          # (uma leitura simples pode não contar como atividade).
+          status=$(curl -sS -X POST -o /tmp/response.json -w "%{http_code}" \
+            "${SUPABASE_URL}/rest/v1/rpc/keep_alive" \
             -H "apikey: ${SUPABASE_KEY}" \
-            -H "Authorization: Bearer ${SUPABASE_KEY}")
+            -H "Authorization: Bearer ${SUPABASE_KEY}" \
+            -H "Content-Type: application/json" \
+            -d '{}')
           echo "HTTP status: $status"
           cat /tmp/response.json
           if [ "$status" -ge 300 ]; then
