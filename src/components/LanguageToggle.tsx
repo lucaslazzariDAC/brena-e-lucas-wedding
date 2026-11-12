@@ -5,7 +5,7 @@ export function LanguageToggle() {
 
   return (
     <div
-      className="fixed left-1/2 top-3 z-[60] flex -translate-x-1/2 items-center gap-0 rounded-full border border-silver/70 bg-navy-deep/90 p-1 font-display text-[11px] uppercase tracking-[0.3em] text-silver shadow-[0_8px_28px_rgba(0,0,0,0.55)] backdrop-blur-md sm:top-5 sm:text-[12px]"
+      className="pointer-events-auto mt-3 flex items-center gap-0 rounded-full border border-silver/70 bg-navy-deep/90 p-1 font-display text-[11px] uppercase tracking-[0.3em] text-silver shadow-[0_8px_28px_rgba(0,0,0,0.55)] backdrop-blur-md sm:mt-5 sm:text-[12px]"
       role="group"
       aria-label="Language switcher"
     >

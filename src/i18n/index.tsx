@@ -114,6 +114,9 @@ const pt: Dict = {
   "rsvp.err_phone": "Telefone inválido",
   "rsvp.err_save": "Não foi possível salvar. Tente novamente.",
   "rsvp.deadline_label": "30 de novembro de 2026",
+  "banner.rsvp_prefix": "Confirme sua presença até",
+  "banner.rsvp_cta": "Confirmar",
+  "banner.close": "Fechar aviso",
 
   // Modal RSVP
   "modal.rsvp.title": "Por favor, confirme sua presença",
@@ -230,6 +233,9 @@ const en: Dict = {
   "rsvp.err_phone": "Invalid phone",
   "rsvp.err_save": "Couldn't save. Please try again.",
   "rsvp.deadline_label": "November 30, 2026",
+  "banner.rsvp_prefix": "Please RSVP by",
+  "banner.rsvp_cta": "RSVP",
+  "banner.close": "Close notice",
 
   // Modal RSVP
   "modal.rsvp.title": "Please confirm your attendance",

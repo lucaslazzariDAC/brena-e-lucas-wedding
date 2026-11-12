@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LanguageProvider } from "../i18n";
 import { LanguageToggle } from "../components/LanguageToggle";
+import { RsvpDeadlineBanner } from "../components/RsvpDeadlineBanner";
 
 function NotFoundComponent() {
   return (
@@ -145,7 +146,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
-        {!hideLanguageToggle && <LanguageToggle />}
+        {!hideLanguageToggle && (
+          <div className="pointer-events-none fixed inset-x-0 top-0 z-[60] flex flex-col items-center">
+            <RsvpDeadlineBanner />
+            <LanguageToggle />
+          </div>
+        )}
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </LanguageProvider>
