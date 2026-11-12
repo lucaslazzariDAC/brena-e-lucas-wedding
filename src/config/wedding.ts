@@ -35,8 +35,8 @@ export const wedding = {
         "https://www.google.com/maps/place/Big+Bamboo+Engenho+Eventos+e+Pizzaria",
     },
   ],
-  rsvpDeadline: "2026-11-15T23:59:59-03:00",
-  rsvpDeadlineLabel: "15 de novembro de 2026",
+  rsvpDeadline: "2026-11-30T23:59:59-03:00",
+  rsvpDeadlineLabel: "30 de novembro de 2026",
 
   // WhatsApp number used to receive RSVP submissions (E.164 without +)
   rsvpWhatsApp: "5548999999999",

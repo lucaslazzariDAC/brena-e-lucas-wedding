@@ -4,11 +4,12 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { useLang } from "@/i18n";
 import { supabase } from "@/integrations/supabase/client";
+import { wedding } from "@/config/wedding";
 
 export function RSVPForm() {
   const { t } = useLang();
-  // O formulário nunca é desabilitado, mesmo após o prazo.
-  const closed = false;
+  // Bloqueia o formulário após o prazo de confirmação.
+  const closed = Date.now() > new Date(wedding.rsvpDeadline).getTime();
 
   const schema = z.object({
     name: z.string().trim().min(2, t("rsvp.err_name")).max(120, t("rsvp.err_name")),
